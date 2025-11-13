@@ -18,7 +18,11 @@
     }
 
     *,*::before,*::after{box-sizing:border-box;}
-    html,body{height:100%;}
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
     body{
       margin:0;
       background:linear-gradient(180deg,var(--bg),#04101a 80%);
@@ -39,7 +43,22 @@
       margin:0 auto;
     }
 
-    img{max-width:100%; height:auto; display:block; border-radius:6px;}
+    .container, .nav, .nav-list, .hero-inner, .about-grid, .projects-grid {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a, span {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
     a{color:var(--accent); text-decoration:none;}
     a:hover, a:focus{opacity:0.9; text-decoration:underline;}
     .visually-hidden{
@@ -113,8 +132,12 @@
     .nav-list{
       display:flex;
       gap:0.5rem;
-      align-items:center;
       flex-wrap:wrap;
+      align-items:center;
+      justify-content: center;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
     }
 
     .nav-link{
@@ -156,7 +179,7 @@
     .hero-figure{
       margin-top:1.25rem;
       width:100%;
-      max-width:420px;
+       max-width: 100%;
       box-shadow:0 8px 30px rgba(2,8,14,0.6);
       border:1px solid rgba(255,255,255,0.03);
     }
@@ -202,6 +225,8 @@
       grid-template-columns:1fr;
       gap:1rem;
       margin-top:0.75rem;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .project-card{
